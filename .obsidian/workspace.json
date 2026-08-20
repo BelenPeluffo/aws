@@ -11,10 +11,14 @@
             "id": "48da8a6106b3d348",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Atlas/AWS/SOA-C03/00 -- QUID.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "00 -- QUID"
             }
           }
         ]
@@ -196,7 +200,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Excalidraw/ELB-ASG wiring.excalidraw.md",
+                "file": "Atlas/AWS/SOA-C03/00 -- QUID.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -250,10 +254,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "34b00ed06c7ab9c2",
+  "active": "48da8a6106b3d348",
   "lastOpenFiles": [
-    "Atlas/AWS/SOA-C03",
+    "Atlas/AWS/SOA-C03/00 -- QUID.md",
     "Excalidraw/ELB-ASG wiring.excalidraw.md",
+    "Atlas/AWS/SOA-C03",
     "Atlas/AWS/VPC EP.md",
     "Atlas/AWS/Simple Queue Service.md",
     "Atlas/AWS/Elastic Block Store.md",
@@ -289,7 +294,6 @@
     "GEAR/templates",
     "GEAR",
     "Atlas/AWS",
-    "Efforts",
-    "Calendar"
+    "Efforts"
   ]
 }
