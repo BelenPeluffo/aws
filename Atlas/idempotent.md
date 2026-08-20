@@ -1,0 +1,1 @@
+En el contexto de la tecnología, significa que produce siempre el mismo resultado sin importar ningún factor.

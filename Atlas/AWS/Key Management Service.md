@@ -1,0 +1,62 @@
+---
+aliases:
+  - KMS
+dudas: true
+tags:
+  - DVA02-30
+  - encryption
+  - auto-rotation
+  - no-policy-no-access
+---
+### Dudas
+- customer-managed -- ¿se paga $1 POR KEY o por usar el servicio?
+- imported keys -- ¿caen dentro de la definición de "customer-owned" o son una categoría diferente?
+- GenerateDataKey -- el envelope con la file encriptada ¿dónde queda? ¿en el cliente o éso sí es enviado a KMS?
+- GenerateRandom -- ¿para qué se usa?
+- IAM policies -- ¿qué diferencia hay entre IAM role session y Federated user session?
+- encrypt' -- ¿qué es RSA?
+- policies -- ¿sólo se pueden asignar policies a las CMK o a cualquier tipo de key?
+- integration w/ Lambda -- ¿qué diferencia hay entre el in-flight encrypt' y las encrypted variables?
+### Notas
+- AWS managed
+- Usable via CLI, console, SDK
+### Palabras clave
+- elements -- AWS manages soft 4 encrypt'
+	- keys  -- R-scoped, x-acc sharable
+		- encryption type?
+			- symmetric -- 1 key 4 encrypt & decrypt, use case: encrypt in AWS (reposo), AES-256
+			- asymmetric -- public key 4 encrypt & private key 4 decrypt, only public accessible, use case: encrypt outside AWS, RSA & ECC
+		- who owns/manages it?
+			- AWS-owned -- [[at rest encryption#server side|SSE]] 4 [[S3]] | [[SQS]] | [[DDB]] | [[EBS]] | [[Relational DB Service|RDS]] | any s natively integrated w KMS, created by default
+			- AWS-managed -- 4 AWS services not owned
+			- customer-managed -- $1/month
+		- auto-rotation
+			- AWS-managed -- 1/year
+			- customer-managed -- auto | on-demand
+		- ==policies -- none = inaccessible 'cause this has priority over all other policies, control access ^no-policy-no-access
+			- default -- created when none assigned, entire acc access
+			- custom aka #cmk -- define user/role & admin, use case: x-acc
+- APIs
+	- `Encrypt` -- symmetric, save secret in KMS - request CMK - auth valid' - encrypt'd data returned, ==key <4kb==
+	- `Decrypt` -- symmetric, request CMK - auth valid' - decrypt'd secret returned, key <4kb
+	- `GenerateDataKey` -- symmetric, ==2 bypass 4kb limit==, envelope encrypt', encrypt' & decrypt' [[at rest encryption#client side|CSE]]
+		- encript' -- request CMK - gen data key - plaintext data key returned - encrypt data with it - sed encypt'd data & encrypt'd data key 2 KMS.
+		- decrypt -- Decrypt API w/ encrypt'd data KEY - decrypt'd data key returned - data decrypt' client side
+	- `GenerateDataKeyWithoutPlaintext` -- symmetric, generate data key 2 b used in the future
+	- `GenerateRandom` -- random string
+- SDK
+	- Encrypt'
+		- data key caching -- re-use dkeys -> less calls 2 KMS, security trade-off: u use same dkey 2 many files
+			- `LocalCryptoMaterialsCache` -- cache config
+- quotas -- shared quota between all keys in acc, f(R)
+	- `ThrottlingException` -- quota limit exceeded
+		- solutions
+			- expo backoff
+			- DEK caching via Encrypt' SDK
+			- quota increase -- via: API | AWS support ticket
+- integración
+	- [[Atlas/AWS/CloudTrail]] -- audit KMS keys usage
+	- [[Atlas/AWS/Identity and Access Manager]] -- auth, used alongside key policies 4 x-acc
+	- [[Atlas/AWS/Lambda]] -- via Lx console can set variables & encrypt'em -> KMS under the hood, env decrypt'd when fx run
+	- [[S3]] -- SSE-KMS bucket key => less calls 2 KMS, trade-off: less KMS events in CTrail, vía CREATE console
+	- [[CloudWatch]] -- `associate-kms-key` -- assoc/update key 2 existing log group
