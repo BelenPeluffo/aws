@@ -4,79 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "4584cd3bb0d4c492",
+        "id": "501bbce8308a1931",
         "type": "tabs",
         "children": [
           {
-            "id": "dc5bfd9eb2bedbaa",
+            "id": "48da8a6106b3d348",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Atlas/AWS/DVA-C02/A reforzar.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "A reforzar"
-            }
-          },
-          {
-            "id": "885bf1ee16ab41a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Atlas/AWS/DVA-C02/q.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "q"
-            }
-          },
-          {
-            "id": "b92b8822c0831ad4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Atlas/AWS/API Gateway.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "API Gateway"
-            }
-          },
-          {
-            "id": "fdea68edbbc5d4c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Atlas/AWS/VPC EP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "VPC EP"
-            }
-          },
-          {
-            "id": "a39653384bb6e30b",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/ELB-ASG wiring.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "ELB-ASG wiring.excalidraw"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -309,8 +250,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ecd35fedb87fafad",
+  "active": "34b00ed06c7ab9c2",
   "lastOpenFiles": [
+    "Atlas/AWS/SOA-C03",
     "Excalidraw/ELB-ASG wiring.excalidraw.md",
     "Atlas/AWS/VPC EP.md",
     "Atlas/AWS/Simple Queue Service.md",
@@ -336,7 +278,6 @@
     "Atlas/AWS/DVA-C02/SQS CreateQueue characteristics.md",
     "Atlas/AWS/DVA-C02/RDS m-AZ features.md",
     "Atlas/AWS/Elastic Compute Cloud.md",
-    "Atlas/AWS/DVA-C02/ELB timeout error tracing.md",
     "copilot/copilot-conversations",
     "copilot/copilot-custom-prompts",
     "copilot",
