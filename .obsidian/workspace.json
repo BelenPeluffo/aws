@@ -257,6 +257,7 @@
   "active": "48da8a6106b3d348",
   "lastOpenFiles": [
     "Atlas/AWS/SOA-C03/00 -- QUID.md",
+    "Tormenta titánica.md",
     "Excalidraw/ELB-ASG wiring.excalidraw.md",
     "Atlas/AWS/SOA-C03",
     "Atlas/AWS/VPC EP.md",
@@ -282,7 +283,6 @@
     "Atlas/AWS/DVA-C02/Fixing uneven ELB traffic.md",
     "Atlas/AWS/DVA-C02/SQS CreateQueue characteristics.md",
     "Atlas/AWS/DVA-C02/RDS m-AZ features.md",
-    "Atlas/AWS/Elastic Compute Cloud.md",
     "copilot/copilot-conversations",
     "copilot/copilot-custom-prompts",
     "copilot",
