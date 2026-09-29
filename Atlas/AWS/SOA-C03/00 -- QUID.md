@@ -12,3 +12,19 @@ aliases:
 > En [AWS Skill Builder](https://skillbuilder.aws/learning-plan/BZJS8KQ916/aws-cloudops-engineer-learning-plan-includes-labs/8ZFKBMAMFH) > CloudOps 101
 
 - CloudOps = {deploy, monitor, ~~maintain~~ sustain, secure, optimize} = DMSx2O
+
+```base
+filters:
+  and:
+    - file.inFolder("Atlas/AWS")
+    - dudas == true
+    - file.tags.contains("SOA-C03")
+properties:
+  file.name:
+    displayName: Question
+views:
+  - type: table
+    name: Table
+    sort: []
+
+```

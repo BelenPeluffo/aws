@@ -1,6 +1,7 @@
 ---
 dudas: true
 tags:
+  - SOA-C03
 aliases:
 ---
 ### Dudas

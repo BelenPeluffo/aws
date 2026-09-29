@@ -32,12 +32,13 @@ aliases:
     El lifespan de las credenciales y, por consiguiente, nivel de seguridad que cada una conlleva. Los Roles tienen creds temporales y los Users, permanentes.
 ### Notas
 ### Palabras clave
-- Roles — provides creds & permissions to RR, `describe-instance` API, canNOT b attached 2 on-premises RR, TEMPORARY creds
+- core components -- [[Identity and Access Management#^938a32|roles]], [[Identity and Access Management#^5a256f|users]], user groups & [[Identity and Access Management#^d4360f|policies]]
+- Roles — provides creds & permissions to RR, `describe-instance` API, canNOT b attached 2 on-premises RR, TEMPORARY creds ^938a32
 	- [[Elastic Compute Cloud|EC2]] instance profile -- es una entidad-wrapper que se crea por defecto junto con los roles y que al asignársela a una instancia permite que ésta adquiera los permisos definidos por el rol, "una instancia usa un rol" = la instancia está usando un instance profile ^cfdbcd
-- Users — CAN b attachaed 2 on-premises RR
+- Users — CAN b attachaed 2 on-premises RR ^5a256f
 - AWS Policy Simulator — access 2 permission state 4 user based on all identity policies applied 2 it ⇒ use case: c y AccessError/PermissionError, policy sandbox!
 - Signature — ID & Auth creds, sign must b sent in almost every API call, manual: via Auth header or URL query string, se calcula en base a las creds de la identity/security token
-- policies
+- policies ^d4360f
 	- eval of policies
 		- general rule -- eplicit `DENY` ? `DENY` : explicit `ALLOW` ? `ALLOW` : `DENY`, explicit `DENY` >> explicit `ALLOW`
 		- vs [[Simple Storage Service|S3]] -- all rules are joined => IAM policy + bucket policy = total de policies
