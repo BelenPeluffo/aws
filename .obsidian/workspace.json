@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Atlas/AWS/Well-Architected Framework.md",
+                "file": "Atlas/AWS/The art of TAGS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Well-Architected Framework"
+              "title": "The art of TAGS"
             }
           }
         ],
@@ -216,7 +216,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Atlas/AWS/Well-Architected Framework.md",
+                "file": "Atlas/AWS/The art of TAGS.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -273,6 +273,9 @@
   "active": "8ff5277bc92e2d41",
   "lastOpenFiles": [
     "Atlas/AWS/SOA-C03/00 -- QUID.md",
+    "Atlas/AWS/DVA-C02/A reforzar.md",
+    "Atlas/AWS/DVA-C02/00 -- QUID.md",
+    "Atlas/AWS/The art of TAGS.md",
     "Atlas/AWS/Well-Architected Framework.md",
     "Tormenta titánica.md",
     "Excalidraw/ELB-ASG wiring.excalidraw.md",
@@ -283,7 +286,6 @@
     "Excalidraw/API GW.excalidraw.md",
     "Atlas/AWS/API Gateway.md",
     "Atlas/AWS/CodeDeploy.md",
-    "Atlas/AWS/DVA-C02/A reforzar.md",
     "Atlas/AWS/DVA-C02/ECS Container de-registration issue.md",
     "Atlas/AWS/DVA-C02/q.md",
     "Atlas/AWS/DVA-C02/SQS message max size.md",
@@ -297,8 +299,6 @@
     "Atlas/AWS/DVA-C02/EBeanstalk failed instances in rolling deploy.md",
     "Atlas/AWS/DVA-C02/CForm signer def'.md",
     "Atlas/AWS/DVA-C02/Managed encrypt' key 4 SSE in S3.md",
-    "Atlas/AWS/DVA-C02/Fixing uneven ELB traffic.md",
-    "Atlas/AWS/DVA-C02/SQS CreateQueue characteristics.md",
     "copilot/copilot-conversations",
     "copilot/copilot-custom-prompts",
     "copilot",

@@ -11,17 +11,17 @@ aliases:
 ### Palabras clave
 - concept -- tools 2 evaluate & improve sys based on BPs
 - pillars -- la APLICACIÓN del criterio del general principle -- CoRSOPS
-	- ==ops excellence== -- **hacerlo bien, monitorearlo y mejorarlo** -- automatización y monitoreo y mejora de procesos -- what u doing? IMPLEMENT BPs -- what 4? reliable, efficient, cost-effective envs
+	- ==ops excellence== -- focus: **PROCESS** -- **hacerlo bien, monitorearlo y mejorarlo** -- **automatización** y monitoreo y mejora de procesos -- what u doing? IMPLEMENT BPs -- what 4? reliable, efficient, cost-effective envs -> **QUICK N' RELIABLE** 4 customs ^ca7a1c
 		- design principles
 			- teams org' = f(business outcome) -- base ur sys model 2 support the client's goals n' priorities
-			- observe 2 take action -- use the Key Performance Indicators (KPIs) 2 understand what can b perfected
-			- automate, w caution -- cloud workload AS CODE
-			- frequent, small, reversible changes
+			- observe 2 take action -- establish n use the KPIs[^2] 2 understand what can b perfected
+			- automate, w caution -- cloud workload ops AS CODE
+			- frequent, small (scalable and losely coupled), reversible changes
 			- better ur procedures frequently
-			- anticipate failure
+			- anticipate failure -- drive failure scenarios testing
 			- learn from all op events
 			- manag'd ss, gurl
-		- BPs -- OPOE
+		- BP areas -- OPOE
 			- organice -- ops = f(gov&compliance reqs)
 				- org priorities -- make sure 1. u know org's goals n 2. ops are aligned 2 that
 				- op model -- make sure 2 know WHO owns WHAT, those people will help u w definition
@@ -37,11 +37,11 @@ aliases:
 				- what is HEALTHY? -- que las métricas definidas lo estén en base en OUTCOMES para que sus datos sean más valiosos
 				- respond 2 events -- creá tus [[playbook]] y [[runbook]] para rtas consistentes a los eventos. RCAs[^1] para documentar workarounds
 			- evolve -- u need 2 make time 2 RCA & investigate on what could b better'd
-	- security -- proteger DATA/SYS/RRs -- acc ctrl, encrypt', security BPs 
+	- security -- proteger DATA/SYS/RRs -- acc ctrl, encrypt', security BPs  ^8f68ef
 	- reliability -- non stop -- fault tolerant, plan Bs
 	- sustainability -- use as little energy as possible -- monitor r use
 	- perfo eficc -- sys tailored 2 business needs -- monitor use, auto-scale, 
-	- cost opt -- pay as little as possible -- right-sizing, reserved
+	- cost opt -- pay as little as possible -- right-sizing, reserved ^f202d5
 - general design principles -- el CONCEPTO fundante -- what 4? effective cloud archs
 	- kno thy capacity needs -- use auto-scaling when possible
 	- test as in PROD -- u can create envs for testing and then turn them down and pay only for the RR n' T u used them
@@ -51,3 +51,5 @@ aliases:
 	- el que no rompe, no trabaja
 
 [^1]: Root Cause Analysis
+
+[^2]: Key Performance Indicators
