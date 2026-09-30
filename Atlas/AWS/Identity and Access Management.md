@@ -3,6 +3,7 @@ dudas: false
 tags:
   - security
   - DVA02-29
+  - SOA-C03
 aliases:
   - IAM
 ---
@@ -32,23 +33,37 @@ aliases:
     El lifespan de las credenciales y, por consiguiente, nivel de seguridad que cada una conlleva. Los Roles tienen creds temporales y los Users, permanentes.
 ### Notas
 ### Palabras clave
-- core components -- [[Identity and Access Management#^938a32|roles]], [[Identity and Access Management#^5a256f|users]], user groups & [[Identity and Access Management#^d4360f|policies]]
-- Roles — provides creds & permissions to RR, `describe-instance` API, canNOT b attached 2 on-premises RR, TEMPORARY creds ^938a32
+- concept -- **AUTH (who? & what?)**, steps: 1. auth-e 2. auth-o 3. grant, GLOBAL s
+- core components -- [[Identity and Access Management#^938a32|roles]], [[Identity and Access Management#^5a256f|users]], [[Identity and Access Management#^bf3ed6|user groups]] & [[Identity and Access Management#^d4360f|policies]] ^1a7412
+- Roles — **permission set** 4 s/person, `describe-instance` API, canNOT b attached 2 on-premises RR, TEMPORARY creds ^938a32
+	- config -- thru [[Console]] | [[Atlas/AWS/SDK]] | [[Atlas/AWS/CLI]]
+	- trust policy -- who can assume the role?, assumed thru [[Security Token Service|sts:AssumeRole]] ^5ec1d6
+		- ownership
+			- AWS managed -- power users/admin
+			- customer managed -- reusable, version control, 
+			- inline -- principal-bound => del principal -> del policy
+	- accs pattern
 	- [[Elastic Compute Cloud|EC2]] instance profile -- es una entidad-wrapper que se crea por defecto junto con los roles y que al asignársela a una instancia permite que ésta adquiera los permisos definidos por el rol, "una instancia usa un rol" = la instancia está usando un instance profile ^cfdbcd
-- Users — CAN b attachaed 2 on-premises RR ^5a256f
+- Users — **s/person**, CAN b attachaed 2 on-premises RR, acc-scoped ^5a256f
+	- creds -- user, pass, acc ks 4 programmatic acc
+	- attr 4 config
+		- acc type -- prog | console | both
+		- pass policy
+		- MFA ^c8e889
+		- tags 4 [[The art of TAGS|org & mgmt]]
+	- unique users
+		- root -- primary acc holder, FULL ACCS
+		- federated -- accs AWS thru external IdP[^1]
+	- Groups -- collection of users ^bf3ed6
 - AWS Policy Simulator — access 2 permission state 4 user based on all identity policies applied 2 it ⇒ use case: c y AccessError/PermissionError, policy sandbox!
 - Signature — ID & Auth creds, sign must b sent in almost every API call, manual: via Auth header or URL query string, se calcula en base a las creds de la identity/security token
-- policies ^d4360f
-	- eval of policies
-		- general rule -- eplicit `DENY` ? `DENY` : explicit `ALLOW` ? `ALLOW` : `DENY`, explicit `DENY` >> explicit `ALLOW`
-		- vs [[Simple Storage Service|S3]] -- all rules are joined => IAM policy + bucket policy = total de policies
+- policies -- c [[The art of policies#^cef727|policies 101]] ^d4360f
+	- elements -- c [[The art of policies#^85c1a1|policies 101]]
+		- most used permissions
+			- `iam:PassRole` -- es la que permite que un user pueda permitir que un s tome un role, se puede limitar en `Statement.x.Resource` el rol específico que se puede pasar ([[Identity and Access Management#^509640|duda]])
+			- `iam:GetRole` -- obtener los datos del rol
+			- `sts:AssumeRole` -- para asignar qué servicios/users (*principals*) pueden asumir ese rol, 15m < asump' time < 1h,  ([[Identity and Access Management#^ba7269|duda 1]], [[Identity and Access Management#^d33663|duda 2]])
+				- ubicación -- se define en la [[trust policy]] del rol asumible
 	- dynamic policies -- usa vars ([[Identity and Access Management#^3d15c6|duda]])
-	- ownership
-		- AWS managed -- power users/admin
-		- customer managed -- reusable, version control, 
-		- inline -- principal-bound => del principal -> del policy
-- permissions
-	- `iam:PassRole` -- es la que permite que un user pueda permitir que un s tome un role, se puede limitar en `Statement.x.Resource` el rol específico que se puede pasar ([[Identity and Access Management#^509640|duda]])
-	- `iam:GetRole` -- obtener los datos del rol
-	- `sts:AssumeRole` -- para asignar qué servicios/users (*principals*) pueden asumir ese rol, 15m < asump' time < 1h,  ([[Identity and Access Management#^ba7269|duda 1]], [[Identity and Access Management#^d33663|duda 2]])
-		- ubicación -- se define en la [[trust policy]] del rol asumible
+
+[^1]: Identity provider

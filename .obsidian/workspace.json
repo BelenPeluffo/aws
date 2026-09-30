@@ -6,6 +6,7 @@
       {
         "id": "501bbce8308a1931",
         "type": "tabs",
+        "dimension": 34.94704992435703,
         "children": [
           {
             "id": "48da8a6106b3d348",
@@ -36,6 +37,28 @@
             }
           },
           {
+            "id": "61a39d818f9ec25a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Atlas/AWS/The art of policies.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The art of policies"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "8c9dcb30bb481d2f",
+        "type": "tabs",
+        "dimension": 65.05295007564297,
+        "children": [
+          {
             "id": "92201939c8c578b7",
             "type": "leaf",
             "state": {
@@ -49,8 +72,7 @@
               "title": "Identity and Access Management"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -84,7 +106,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ACL",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -115,7 +137,8 @@
               "title": "Copilot"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -230,7 +253,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Atlas/AWS/Identity and Access Management.md",
+                "file": "Atlas/AWS/The art of ID and ACC mgmt.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -284,10 +307,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "92201939c8c578b7",
+  "active": "8ff5277bc92e2d41",
   "lastOpenFiles": [
-    "Atlas/AWS/The art of ID and ACC mgmt.md",
     "Atlas/AWS/SOA-C03/00 -- QUID.md",
+    "Atlas/AWS/The art of ID and ACC mgmt.md",
+    "Atlas/AWS/The art of policies.md",
+    "Atlas/AWS/Identity and Access Management.md",
     "Atlas/AWS/The art of TAGS.md",
     "Atlas/AWS/DVA-C02/A reforzar.md",
     "Atlas/AWS/DVA-C02/00 -- QUID.md",
@@ -311,8 +336,6 @@
     "Atlas/AWS/CloudFront.md",
     "Atlas/AWS/DVA-C02/m-envs 4 EBeanstalk app.md",
     "Atlas/AWS/DVA-C02/ELB error when no target in TG.md",
-    "Atlas/AWS/DVA-C02/EBeanstalk failed instances in rolling deploy.md",
-    "Atlas/AWS/DVA-C02/CForm signer def'.md",
     "copilot/copilot-conversations",
     "copilot/copilot-custom-prompts",
     "copilot",

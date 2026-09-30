@@ -168,7 +168,7 @@ aliases:
 		- security — DENY policies > ALLOW policies > undefined policies, recomended: IAM policies + bucket policies
 			- user-based — IAM policies, ==condition: `aws:SecureTransport` = enforce SSL rq==
 			- r-based
-				- bucket policies — allows for granular control
+				- bucket policies — allows for granular control ^7bf99d
 					- use cases
 						- public access to bucket
 						- object encription @ upload
