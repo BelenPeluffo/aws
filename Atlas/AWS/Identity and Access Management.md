@@ -37,14 +37,13 @@ aliases:
 - core components -- [[Identity and Access Management#^938a32|roles]], [[Identity and Access Management#^5a256f|users]], [[Identity and Access Management#^bf3ed6|user groups]] & [[Identity and Access Management#^d4360f|policies]] ^1a7412
 - Roles — **permission set** 4 s/person, `describe-instance` API, canNOT b attached 2 on-premises RR, TEMPORARY creds ^938a32
 	- config -- thru [[Console]] | [[Atlas/AWS/SDK]] | [[Atlas/AWS/CLI]]
-	- trust policy -- who can assume the role?, assumed thru [[Security Token Service|sts:AssumeRole]] ^5ec1d6
+	- trust policy -- **who can assume the role?**, assumed thru [[Security Token Service|sts:AssumeRole]], [[The art of policies#^24a403|policy.Principal]] is mandatory ^5ec1d6
 		- ownership
 			- AWS managed -- power users/admin
 			- customer managed -- reusable, version control, 
 			- inline -- principal-bound => del principal -> del policy
-	- accs pattern
 	- [[Elastic Compute Cloud|EC2]] instance profile -- es una entidad-wrapper que se crea por defecto junto con los roles y que al asignársela a una instancia permite que ésta adquiera los permisos definidos por el rol, "una instancia usa un rol" = la instancia está usando un instance profile ^cfdbcd
-- Users — **s/person**, CAN b attachaed 2 on-premises RR, acc-scoped ^5a256f
+- Users — **s/person**, CAN b attachaed 2 on-premises RR, acc-scoped, usualy created 4 humans who need accs 2 console and the AWS UI ^5a256f
 	- creds -- user, pass, acc ks 4 programmatic acc
 	- attr 4 config
 		- acc type -- prog | console | both
@@ -55,7 +54,29 @@ aliases:
 		- root -- primary acc holder, FULL ACCS
 		- federated -- accs AWS thru external IdP[^1]
 	- Groups -- collection of users ^bf3ed6
-- AWS Policy Simulator — access 2 permission state 4 user based on all identity policies applied 2 it ⇒ use case: c y AccessError/PermissionError, policy sandbox!
+- Federation -- **role-based accs ctrl**: creds handling on IDP's side & IAM handles auth-e&o based on user attr ^454e79
+	- steps
+		1. config IDPs -- provider type = SAML | OpenID Connect
+		2. Roles creation -- permission policies & trust policies = f(job title | department)
+			- trust policy -- role ass' based on ID attr
+- accs pattern -- f(scope | purpose | trust) ^d543e7
+	- temp elevated accs -- (con roles, seguramente)
+	- s2s accs
+		- in-acc accs ctrl -- f(secure&flex reqs && ss specs), one or the other
+			- r-policies -- not ALL ss support this method, [[The art of policies#^24a403|policy.Principal]] is mandatory, eg: [[Simple Storage Service|S3]] & [[Lambda]] ^fda6f7
+			- s role -- good ol'[[Identity and Access Management#^938a32|Role]]
+		- x-acc -- same as in-acc but w/ extended trust policies, u must use BOTH r-policy + role, permissions must coincidir, `r-policy.Condition.StringEquals.aws:SourceAccount = acc ID`, f(secure&flex reqs && ss specs) ^8467d0
+			- r-policy in target (& s role in origin) -- simpler, work w x ss given not all ss allow r-policies
+			- "role assumption" -- r-policy & s-role in target, + complex & centralized
+	- x-acc -- (same as [[Identity and Access Management#^8467d0|s2s x-acc]], seguramente)
+	- fed user accs -- [[Identity and Access Management#^454e79|con roles]]
+	- prog accss -- (con roles, seguramente)
+- MFA -- [[The art of MFA|MFA 101]]
+	- enforcement
+		- console -- set it thru IAM User edition using ADMIN user
+		- policies -- 4 x acts
+		- prog -- ([[The art of MFA#Dudas|duda]])
+- [[AWS Policy Simulator]] — access 2 permission state 4 user based on all identity policies applied 2 it ⇒ use case: c y AccessError/PermissionError, policy sandbox!
 - Signature — ID & Auth creds, sign must b sent in almost every API call, manual: via Auth header or URL query string, se calcula en base a las creds de la identity/security token
 - policies -- c [[The art of policies#^cef727|policies 101]] ^d4360f
 	- elements -- c [[The art of policies#^85c1a1|policies 101]]
@@ -65,5 +86,14 @@ aliases:
 			- `sts:AssumeRole` -- para asignar qué servicios/users (*principals*) pueden asumir ese rol, 15m < asump' time < 1h,  ([[Identity and Access Management#^ba7269|duda 1]], [[Identity and Access Management#^d33663|duda 2]])
 				- ubicación -- se define en la [[trust policy]] del rol asumible
 	- dynamic policies -- usa vars ([[Identity and Access Management#^3d15c6|duda]])
+	- [[The art of TAGS|tags]] conditions
+		- global -- `aws:condition-name`
+		- s-x -- `s-prefix:condition-name`
+- BPs -- protect root, individual Users, groups 4 permit assgn, least privilege, strong pass, regular rotat', MFA, monitor&audit accs patterns^54dabf
+	- human IDs using ur apps? => federation & temporal creds -- enforce roles more than users
+	- workloads using ur apps? => temporal creds -- roles + SDK
+	- User or root? => enforce MFA
+	- privilege assgn w help of [[IAM Access Analyzer]]
+	- MFA 4 every entity
 
 [^1]: Identity provider

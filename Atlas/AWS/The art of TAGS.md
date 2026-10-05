@@ -28,6 +28,11 @@ aliases:
 			- tag policies -- [[AWS Organizations]], 4 consistency & standard', can b enforced
 			- r tagging w [[(Simple) Systems Manager]] -- 4 auto/bulk tagging => programmatic app'
 			- dashboard ur data
+- auth ctrl patt (aka ABAC auth) -- tag definition = f(s)
+	- matching same-value tags 4 ppals & rr
+	- require x tag
+	- check tag presence
+	- explicitly `DENY` tag-based
 - Integration
 	- [[AWS Config]] & [[AWS Control Tower]] -- enforce tagging policies
 	- [[Console]] -- can consolidate rr based on tags

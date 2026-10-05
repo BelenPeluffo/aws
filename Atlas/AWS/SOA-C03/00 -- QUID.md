@@ -7,6 +7,12 @@ aliases:
 > ![video](https://youtu.be/5JTBS09e7ew?si=iSdvE3L0YyHEKjaP&t=105)
 ### Dudas
 
+### Temario
+- [[The art of ID and ACC mgmt]]
+- [[The art of TAGS]]
+- [[The art of policies]]
+- [[The art of MFA]]
+- [[IAM Identity Center]]
 ### Notas
 > [!note] Dónde quedé
 > En [AWS Skill Builder](https://skillbuilder.aws/learning-plan/BZJS8KQ916/aws-cloudops-engineer-learning-plan-includes-labs/8ZFKBMAMFH) > CloudOps 101

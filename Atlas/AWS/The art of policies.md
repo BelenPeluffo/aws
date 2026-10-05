@@ -14,7 +14,13 @@ aliases:
 	- vs [[Simple Storage Service|S3]] -- all rules are joined => IAM policy + bucket policy = total de policies
 - elements ^85c1a1
 	- `Effect` -- `ALLOW` | `DENY`
-	- `Principal` -- affected entity, opt
+	- `Principal` -- affected entity, opt in certain ctxs ^24a403
+		- values ^9cbc74
+			- `AWS` -- roles, users, acc
+			- `Service`
+			- `Federated` -- IDP
+			- `CanonicalUser`
+			- `*`
 	- `Action` -- `string | []`
 	- `Resource` -- `string | []`
 	- `Condition` -- opt
@@ -22,6 +28,9 @@ aliases:
 	- ID-based -- inline 4 [[Identity and Access Management|IAM]] entities
 	- r-based -- inline 4 rr, e.g: [[Simple Storage Service#^7bf99d|bucket policies]] | [[Identity and Access Management#^5ec1d6|role trust policies]]
 	- org SCP[^1] -- [[AWS Organizations]], max perm 4 acc members
+	- org RCP[^2] -- ídem
 	- ACL (as seen in [[Network Access Control List|N-ACL]]) -- r-attached, 4 x-acc accs, not-JSON
 
 [^1]: S Control Policy
+
+[^2]: r Ctrl Policy
