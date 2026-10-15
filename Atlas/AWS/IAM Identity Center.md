@@ -10,8 +10,8 @@ aliases:
 - [ ] IAM ID center es R-specific?
 - [ ] ¿cómo son de distintos los Users de ID center de los de IAM? ^4e82c7
 - [ ] ¿cómo se define específicamente la conexión entre ID Center y el 3P IDP?
-### Notas
 - [ ] app assmt -- no entiendo nada. O sea, entiendo que es asignar accs a apps, pero **¿dónde se definen?**
+### Notas
 ### Palabras clave
 - concepto -- centralice accs mgmt 2 acc & apps = SINGLE SOURCE OF TRUTH => consistency x-acc
 - ID source

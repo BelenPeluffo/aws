@@ -78,9 +78,9 @@ aliases:
 			```
 	- [[Identity and Access Management#^54dabf|BPs]]
 - tools
-	- [[Identity and Access Management|IAM]] -- entities & MFA
+	- [[Identity and Access Management|IAM]] -- entities & MFA, perms 4 individual acc
 	- [[IAM Identity Center]] -- centralized auth & acc ctrl
 	- [[IAM Access Analyzer]]
-	- [[AWS Organizations]] -- 4 enforcing RCPs n SCPs x-acc
+	- [[AWS Organizations]] -- 4 enforcing RCPs & SCPs x-acc
 	- [[The art of policies|policies]]
 

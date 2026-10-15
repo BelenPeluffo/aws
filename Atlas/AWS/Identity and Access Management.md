@@ -86,7 +86,7 @@ aliases:
 			- `sts:AssumeRole` -- para asignar qué servicios/users (*principals*) pueden asumir ese rol, 15m < asump' time < 1h,  ([[Identity and Access Management#^ba7269|duda 1]], [[Identity and Access Management#^d33663|duda 2]])
 				- ubicación -- se define en la [[trust policy]] del rol asumible
 	- dynamic policies -- usa vars ([[Identity and Access Management#^3d15c6|duda]])
-	- [[The art of TAGS|tags]] conditions
+	- [[The art of TAGS|tags]] conditions -- 4 accs ctrl ^a8f8ca
 		- global -- `aws:condition-name`
 		- s-x -- `s-prefix:condition-name`
 - BPs -- protect root, individual Users, groups 4 permit assgn, least privilege, strong pass, regular rotat', MFA, monitor&audit accs patterns^54dabf

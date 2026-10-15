@@ -28,7 +28,7 @@ aliases:
 			- tag policies -- [[AWS Organizations]], 4 consistency & standard', can b enforced
 			- r tagging w [[(Simple) Systems Manager]] -- 4 auto/bulk tagging => programmatic app'
 			- dashboard ur data
-- auth ctrl patt (aka ABAC auth) -- tag definition = f(s)
+- auth ctrl patt (aka ABAC auth) -- tag definition = f(s) = not all use `aws:ResourceTag` ([[Simple Storage Service|S3]], 4 example)
 	- matching same-value tags 4 ppals & rr
 	- require x tag
 	- check tag presence
@@ -38,6 +38,6 @@ aliases:
 	- [[Console]] -- can consolidate rr based on tags
 	- [[Cost Explorer]] -- detailed billing cost by tag breakdowns
 	- [[Resource Groups]] -- create groups based on tags
-	- [[Identity and Access Management|IAM]] policies -- supports tag-based conditions, caution: define who can modify tags
+	- [[Identity and Access Management|IAM]] policies -- `aws:PrincipalTag`, supports [[Identity and Access Management#^a8f8ca|tag-based condition]], caution: define who can modify tags
 
 [^1]: attr-based access ctrl

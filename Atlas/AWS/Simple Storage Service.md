@@ -164,7 +164,7 @@ aliases:
 				- Archive A — 700d+ > not accessed > 90d
 				- Deep Archive A — 700d+ > not accessed > 180d
 	- bucket
-		- naming conventions — GLOBALLY unique name
+		- naming conventions — GLOBALLY unique name, use naming pattern `aws:PrincipalTag` 4 [[The art of TAGS|conditioned accs]]
 		- security — DENY policies > ALLOW policies > undefined policies, recomended: IAM policies + bucket policies
 			- user-based — IAM policies, ==condition: `aws:SecureTransport` = enforce SSL rq==
 			- r-based
@@ -218,7 +218,7 @@ aliases:
     - SSE [[Key Management Service|KMS]] — AWS hm & user o, key usage audit thru [[Atlas/AWS/CloudTrail]], `x-amz-server-side-encryption="aws:kms"`, bucket API calls KMS ⇒ consumes s quota, can b enforced via bucket policy
     - SSL/TLS — in-transit, S3 exposes 2 EPs: HTTP & HTTPS, can b enforced by bucket-policy.`aws:SecureTransport=true`
 - Cross-Origin Resource Sharing (CORS) — bucket property (NOT bucket policy), allows apps from one domain 2 connect with RR in a different one ^d01b3a
-- MFA-Delete — 2 delete an object user must MFA, requires versioning ON, root can set MFA ON/OFF, vigila: permanent delete, setting version OFF
+- MFA-Delete — 2 delete an object user must MFA, requires versioning ON, root can set MFA ON/OFF, vigila: permanent delete, setting version OFF ^6a1c67
 - S3-Access Logs — logs all reqs authorized or not made 2 buckets, logs must b saved in ANOTHER bucket in same R
 - S3 Pre-signed URL — allow access 2 object in PRIVATE bucket, create via S3 console | AWS CLI | SDK, use case: access 2 x file for x amount of time, URL holds same permissions as creator
 - S3 Access Points — access point (x URL) que permite acceso sobre ciertos prefijos (ciertos archivos o directorios) a ciertos user, configd via access point policy, simplifica gestión de seguridad al no tener que definirlo en la bucket policy (lo que lo vuelve poco escalable y mantenible) ^d640c2
